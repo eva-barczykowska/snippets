@@ -31,6 +31,7 @@ puts
   # => "{"Epic lolcat fail!" >> "Epic wolfman fail!"}"
   print @diff
   puts
+  
 @diff = Differ.diff(@current, @original, 'i')
   # => "Epi{"c lolcat fa" >> "c wolfman fa"}il"
   print @diff

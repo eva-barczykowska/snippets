@@ -13,6 +13,4 @@ end
 puts vowels
 
 puts
-
-
 #2 out of 6 test cases on SoloLearn are failing

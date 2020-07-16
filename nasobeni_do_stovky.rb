@@ -1,31 +1,40 @@
-puts "Hello! What is your name?" #welcoming user
+puts "Hello! What is your name?"
 name = gets.chomp
-puts "Welcome #{name}. Let's practise adding to 100. You need to do only 4 examples today. Good luck!"
 
-counter = 0   #starting the counter
-while counter < 5
-  puts "This is example number #{counter}"
-a = 1 + rand(50)
-b = 1 + rand(50)
+puts " "
 
+puts "Welcome, #{name}."
+puts " "
+puts "Let's practise adding to 100."
+puts " "
+puts "You need to do only 4 examples today. Good luck!"
 
-def nasobeni(a,b)  #defining method for adding 2 numbers
-  res = a + b
+puts " "
+praise_words = ["Skvele", "Fantastic", "Very good", "Doing well"]
+
+counter = 4  #I want him to do that many examples. Practise makes perfect! Of course when HE does it, I will increase the counter, hehe.
+while counter > 0
+  a = 1 + rand(50)
+  b = 1 + rand(50)
+  def nasobeni(a,b)
+    res = a + b
+  end
+  res = nasobeni(a,b)
+  puts "How much is #{a} and #{b}?"
+  guess = gets.chomp.to_i
+  until guess == res
+    puts "Nope, try again"
+    puts "How much is #{a} and #{b}?"
+    guess = gets.chomp.to_i
+    end
+  if guess == res
+     counter -= 1
+       if counter != 0 && counter != 1
+         puts "Very good! Now you need to do #{counter} examples."
+       elsif counter == 1
+         puts praise_words.sample + ", you're almost there! This is the last example!"
+       else
+         puts "Good news: today's practise if finished, #{name}. GOOD JOB!"
+       end
+   end
 end
-
-res = nasobeni(a,b) #calling the method
-
-puts "How much is #{a} and #{b}?"
-guess = gets.chomp.to_i
-if guess == res
-  puts "Well done!"
-  counter += 1
-  break
-else
-  puts "That's not right, try again..."
-end
-
-
-
-correct = %w[well done super fantastic skvele]
-correct = push("you are the best")

@@ -30,7 +30,7 @@ while counter > 0
        elsif counter == 1
          puts praise_words.sample + ", you're almost there! This is the last example!"
        else
-         puts "Good news: today's practise if finished, #{name}. GOOD JOB!"
+         puts "Good news: today's practise is finished, #{name}. GOOD JOB!"
        end
    end
 end

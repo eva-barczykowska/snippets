@@ -24,9 +24,10 @@ begin
   lucky_nums["dog"]
 rescue ZeroDivisionError
   puts "Pamietaj cholero nie dziel przez zero!"
-rescue TypeError => e # I can store the error in the variable # NEVER rescue all the errors! this rescues every exception!! see link to read below
+rescue TypeError => e # see link to read below how to rescue errors
   puts e # and I can print that variable
 end
 
 # it's a good idea to specify the error you want to catch
 # https://www.honeybadger.io/blog/ruby-exception-vs-standarderror-whats-the-difference/
+# https://www.rubyguides.com/2019/06/ruby-rescue-exceptions/

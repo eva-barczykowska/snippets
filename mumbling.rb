@@ -54,6 +54,15 @@ p accum("abcd") == "A-Bb-Ccc-Dddd"
 p accum("RqaEzty") == "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
 p accum("cwAt") == "C-Ww-Aaa-Tttt"
 
+# Algorithm for the other solution
+# convert the String to the Array
+# look at the char and its index
+# transform this array in the following way:
+# -add capital letter plus as many lower case letters as the number that represents index
+# -this will give me ['A', 'Bb','Ccc','Dddd']
+# -this is still an array, join it by '-'
+# -return the result
+
 def accum(s)
   s.chars.each_with_index.map{ |c, i| c.upcase + c.downcase * i }.join('-')
 end

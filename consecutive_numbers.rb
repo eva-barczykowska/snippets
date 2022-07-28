@@ -2,7 +2,8 @@
 #
 # By not consecutive we mean not exactly 1 larger than the previous element of the array.
 #
-# E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+# E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all
+# consecutive but 6 is not, so that's the first non-consecutive number.
 #
 # If the whole array is consecutive then return nil.
 #
@@ -21,23 +22,18 @@
 # -if not,return it
 # else return nil
 
-  def first_non_consecutive(arr)
-    if arr.empty?
-      return arr
-    elsif arr.size == 1
-      return arr
-    else
-      counter = 1
-      loop do
-        if arr[counter] != arr[counter - 1].next
-          return arr[counter]
-        end
-        counter += 1
-        break if counter == arr.size
-      end
-    end
-    return nil
+def first_non_consecutive(arr)
+  return arr if arr.empty?
+  return arr if arr.size == 1
+
+  counter = 1
+  loop do
+    return arr[counter] if arr[counter] != arr[counter - 1].next
+
+    counter += 1
+    break if counter == arr.size
   end
+end
 
 p first_non_consecutive([]) == []
 p first_non_consecutive([44]) == [44]
@@ -49,7 +45,7 @@ p first_non_consecutive([31,32]) == nil
 p first_non_consecutive([-3,-2,0,1]) == 0
 p first_non_consecutive([-5,-4,-3,-1]) == -1
 
-puts ""
+puts ''
 # other solutions
 def first_non_consecutive(arr)
   arr.find.with_index{|x, i| x - arr[i-1] > 1}

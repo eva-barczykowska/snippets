@@ -17,7 +17,7 @@
 def sum_array(arr)
   return 0 if !arr
   return 0 if arr.empty?
-  return 0 if arr.size == 1 || arr.size == 2
+  return 0 if arr.size < 3
   arr = arr.sort
   arr[1...-1].sum
 end
